@@ -43,4 +43,32 @@ class CategoryController extends Controller
         // return view('backend.category_list')->with(['categories'=> $categories, 'subcategoies'=> $subcategoies]);
         // return view('backend.category_list', ["all_Categories" => $categories, "all_sub_Categories" => $subcategoies]);
     }
+
+    /**
+     * To Store data
+     * 
+     * Steps :
+     * 
+     * 1. Load Create page
+     * 2. Store data end point
+     * 3. In store data endpoint (data store)
+     */
+
+    public function create()
+    {
+        return view('backend.category_create');
+    }
+
+    public function store(Request $request)
+    {
+        // dd($_POST['name']);
+        // dd($request->name);
+        // INSERT INTO categories  ("name") values ()
+        Category::create([
+            'name' => $request->name,
+        ]);
+
+        // dd("Successfully inserted values");
+        return redirect()->route('category_list');
+    }
 }
