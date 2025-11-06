@@ -8,7 +8,7 @@
             <- BACK
         </a>
         
-        <form action="{{ route('category_store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('category_update', ['id' => $category->id]) }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div>
                 <label for="name">Name</label>

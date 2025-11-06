@@ -91,4 +91,15 @@ class CategoryController extends Controller
         $category = Category::find($id);
         return view('backend.category_edit', compact('category'));
     }
+
+    public function update($id, Request $request)
+    {
+        // dd($request->name);
+        $category = Category::find($id);
+        $category->name = $request->name;
+        $category->save();
+
+        Session::flash('success', "Category ".$category->name." updated successfully.");
+        return redirect()->route('category_list'); 
+    }
 }
