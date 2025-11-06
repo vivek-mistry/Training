@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use Illuminate\Support\Facades\Session;
 
 class CategoryController extends Controller
 {
@@ -70,5 +71,18 @@ class CategoryController extends Controller
 
         // dd("Successfully inserted values");
         return redirect()->route('category_list');
+    }
+
+    public function delete($id)
+    {
+        // $category = Category::find($id);
+        $category = Category::where('id', $id)->first();
+
+        if($category)
+        {
+            $category->delete();
+            Session::flash('success', "Category deleted successfully.");
+            return redirect()->route('category_list'); 
+        }
     }
 }

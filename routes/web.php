@@ -11,3 +11,4 @@ Route::get('/', function () {
 Route::get('categories', [CategoryController::class, 'index'])->name('category_list');
 Route::get('categories/create', [CategoryController::class, 'create'])->name('category_create');
 Route::post('categories/store', [CategoryController::class, 'store'])->name('category_store');
+Route::get('categories/remove/{id}', [CategoryController::class,'delete'])->name('category_delete');
