@@ -85,4 +85,10 @@ class CategoryController extends Controller
             return redirect()->route('category_list'); 
         }
     }
+
+    public function edit($id)
+    {
+        $category = Category::find($id);
+        return view('backend.category_edit', compact('category'));
+    }
 }

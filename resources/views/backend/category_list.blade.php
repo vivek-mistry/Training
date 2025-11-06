@@ -43,6 +43,10 @@
                     <td>
                         <a href="{{ route('category_delete', ['id'=> $category->id]) }}">
                             DELETE
+                        </a> <br/>
+
+                        <a href="{{ route('category_edit', ['id' => $category->id]) }}">
+                            EDIT
                         </a>
                     </td>
                 </tr>
