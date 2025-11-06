@@ -15,6 +15,11 @@
                 </tr>
             </thead>
             <tbody>
+                @if ($categories->count() === 0)
+                    <tr >
+                        <td colspan="4">NO RECORD FOUND.</td>
+                    </tr>
+                @endif
                 @foreach($categories as $category)
                 <tr>
                     <td>
