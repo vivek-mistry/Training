@@ -9,14 +9,7 @@
         </a>
         <form action="{{ route('category_store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <div>
-                <label for="name">Name</label>
-                <input type="text" name="name" placeholder="Name" required>
-            </div>
-
-            <div>
-                <button type="submit">SAVE</button>
-            </div>
+            @include('backend.category_form_inputs')
         </form>
         
     </body>

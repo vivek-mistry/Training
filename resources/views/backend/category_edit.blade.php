@@ -10,14 +10,8 @@
         
         <form action="{{ route('category_update', ['id' => $category->id]) }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <div>
-                <label for="name">Name</label>
-                <input type="text" name="name" placeholder="Name" required value="{{ $category->name }}">
-            </div>
-
-            <div>
-                <button type="submit">SAVE</button>
-            </div>
+            @include('backend.category_form_inputs')
+            
         </form>
         
     </body>
