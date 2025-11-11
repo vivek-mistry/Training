@@ -36,4 +36,24 @@ class SubCategoryController extends Controller
         return redirect()->route('sub_category_list');
 
     }
+
+    public function edit($id)
+    {
+        $sub_category = SubCategory::where('id', $id)->first();
+        
+        $categories = Category::get();
+        return view('backend.sub_category_edit', compact('sub_category', 'categories'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $sub_category = SubCategory::where('id', $id)->first();
+        $sub_category->update([
+            'name' => $request->name,
+            'category_id' => $request->category_id,
+        ]);
+
+        Session::flash('success', "SubCategory updated successfully.");
+        return redirect()->route('sub_category_list');
+    }
 }

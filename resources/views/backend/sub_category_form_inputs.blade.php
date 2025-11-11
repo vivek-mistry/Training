@@ -2,7 +2,12 @@
     <label for="category_id">Category</label>
     <select name="category_id">
         @foreach($categories as $category)
-            <option value="{{ $category->id }}"> {{ $category->name }} </option>
+            @if($sub_category?->category_id === $category->id)
+                <option value="{{ $category->id }}" selected> {{ $category->name }} </option>
+            @else
+                <option value="{{ $category->id }}"> {{ $category->name }} </option>
+            @endif
+            
         @endforeach
 
     </select>

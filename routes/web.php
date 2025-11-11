@@ -19,3 +19,5 @@ Route::post('categories/update/{id}', [CategoryController::class, 'update'])->na
 Route::get('sub_categories', [SubCategoryController::class, 'index'])->name('sub_category_list');
 Route::get('sub_categories/create', [SubCategoryController::class, 'create'])->name('sub_category_create');
 Route::post('sub_categories/store', [SubCategoryController::class, 'store'])->name('sub_category_store');
+Route::get('sub_categories/edit/{id}', [SubCategoryController::class, 'edit'])->name('sub_category_edit');
+Route::post('sub_categories/update/{id}', [SubCategoryController::class, 'update'])->name('sub_category_update');

@@ -49,7 +49,7 @@
                             DELETE
                         </a> <br/>
 
-                        <a href="#">
+                        <a href="{{ route('sub_category_edit', $sub_category->id) }}">
                             EDIT
                         </a>
                     </td>
