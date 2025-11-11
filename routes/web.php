@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\SubCategoryController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -14,3 +15,7 @@ Route::post('categories/store', [CategoryController::class, 'store'])->name('cat
 Route::get('categories/remove/{id}', [CategoryController::class,'delete'])->name('category_delete');
 Route::get('categories/edit/{id}', [CategoryController::class, 'edit'])->name('category_edit');
 Route::post('categories/update/{id}', [CategoryController::class, 'update'])->name('category_update');
+
+Route::get('sub_categories', [SubCategoryController::class, 'index'])->name('sub_category_list');
+Route::get('sub_categories/create', [SubCategoryController::class, 'create'])->name('sub_category_create');
+Route::post('sub_categories/store', [SubCategoryController::class, 'store'])->name('sub_category_store');
