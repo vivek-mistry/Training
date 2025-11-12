@@ -56,4 +56,21 @@ class SubCategoryController extends Controller
         Session::flash('success', "SubCategory updated successfully.");
         return redirect()->route('sub_category_list');
     }
+
+    public function fetchDropDownSubCategory($category_id)
+    {
+        $sub_categories = SubCategory::where('category_id', $category_id)->get();
+
+        $html = "";
+
+        // dd($sub_categories->count());
+        foreach($sub_categories as $sub_category){
+            $html .= "<option value=".$sub_category->id.">".$sub_category->name."</option>";
+        }
+
+        return response()->json([
+            'html' => $html
+        ]);
+        
+    }
 }

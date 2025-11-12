@@ -22,5 +22,8 @@ Route::get('sub_categories/create', [SubCategoryController::class, 'create'])->n
 Route::post('sub_categories/store', [SubCategoryController::class, 'store'])->name('sub_category_store');
 Route::get('sub_categories/edit/{id}', [SubCategoryController::class, 'edit'])->name('sub_category_edit');
 Route::post('sub_categories/update/{id}', [SubCategoryController::class, 'update'])->name('sub_category_update');
+Route::get('sub_categories/fetchDropDownSubCategory/{category_id}', [SubCategoryController::class, 'fetchDropDownSubCategory'])->name('sub_category_fetchDropDownSubCategory');
 
 Route::get('products', [ProductController::class, 'index'])->name('product_list');
+Route::get('products/create', [ProductController::class, 'create'])->name('product_create');
+Route::post('products/store', [ProductController::class, 'store'])->name('product_store');

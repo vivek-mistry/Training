@@ -4,7 +4,7 @@
     </head>
     <body>
         <h1>Product List</h1>
-        <a href="#">Create Product</a>
+        <a href="{{ route('product_create') }}">Create Product</a>
         @if (Session::has('success'))
             <p>
                 {{ Session::get('success') }}
