@@ -27,3 +27,5 @@ Route::get('sub_categories/fetchDropDownSubCategory/{category_id}', [SubCategory
 Route::get('products', [ProductController::class, 'index'])->name('product_list');
 Route::get('products/create', [ProductController::class, 'create'])->name('product_create');
 Route::post('products/store', [ProductController::class, 'store'])->name('product_store');
+Route::get('products/edit/{product}', [ProductController::class, 'edit'])->name('product_edit');
+Route::post('products/update/{id}', [ProductController::class, 'update'])->name('product_update');
