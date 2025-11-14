@@ -1,9 +1,7 @@
-<html>
-    <head>
-        <title>Product List</title>
-    </head>
-    <body>
-        <h1>Product List</h1>
+@extends('backend.layout.master_layout')
+
+@section('main_content')
+<h1>Product List</h1>
         <a href="{{ route('product_create') }}">Create Product</a>
         @if (Session::has('success'))
             <p>
@@ -70,5 +68,4 @@
                 @endforeach
             </tbody>
         </table>
-    </body>
-</html> 
+@endsection
