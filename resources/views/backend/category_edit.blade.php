@@ -1,9 +1,7 @@
-<html>
-    <head>
-        <title>Category Edit</title>
-    </head>
-    <body>
-        <h1>Category Edit</h1>
+@extends('backend.layout.master_layout')
+
+@section('main_content')
+    <h1>Category Edit</h1>
         <a href="{{ route('category_list') }}">
             <- BACK
         </a>
@@ -13,6 +11,4 @@
             @include('backend.category_form_inputs')
             
         </form>
-        
-    </body>
-</html> 
+@endsection

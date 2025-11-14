@@ -1,9 +1,7 @@
-<html>
-    <head>
-        <title>Product Create</title>
-    </head>
-    <body>
-        <h1>Product Create</h1>
+@extends('backend.layout.master_layout')
+
+@section('main_content')
+    <h1>Product Create</h1>
         <a href="{{ route('product_list') }}">
             <- BACK
         </a>
@@ -65,5 +63,4 @@
             
         </script>
         <script src="{{ asset('assets/js/subcategory.js') }}"></script>
-    </body>
-</html> 
+@endsection

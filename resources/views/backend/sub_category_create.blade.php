@@ -1,9 +1,7 @@
-<html>
-    <head>
-        <title>SubCategory Create</title>
-    </head>
-    <body>
-        <h1>SubCategory Create</h1>
+@extends('backend.layout.master_layout')
+
+@section('main_content')
+    <h1>SubCategory Create</h1>
         <a href="{{ route('sub_category_list') }}">
             <- BACK
         </a>
@@ -11,6 +9,4 @@
             @csrf
             @include('backend.sub_category_form_inputs')
         </form>
-        
-    </body>
-</html> 
+@endsection
