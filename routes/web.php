@@ -14,6 +14,14 @@ Route::get('template', function () {
     return view('template');
 });
 
+Route::get('dashboard', function () {
+    return view('backend.dashboard');
+});
+
+Route::get('email', function () {
+    return view('backend.email');
+});
+
 Route::get('categories', [CategoryController::class, 'index'])->name('category_list');
 Route::get('categories/create', [CategoryController::class, 'create'])->name('category_create');
 Route::post('categories/store', [CategoryController::class, 'store'])->name('category_store');
