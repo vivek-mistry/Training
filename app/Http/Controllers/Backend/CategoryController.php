@@ -71,7 +71,7 @@ class CategoryController extends Controller
         ]);
 
         // dd("Successfully inserted values");
-        return redirect()->route('category_list');
+        return redirect()->route('category_list')->with('success', 'Category created successfully.');
     }
 
     public function delete($id)
