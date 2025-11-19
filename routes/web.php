@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\AuthenticateController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SubCategoryController;
@@ -41,3 +42,12 @@ Route::get('products/create', [ProductController::class, 'create'])->name('produ
 Route::post('products/store', [ProductController::class, 'store'])->name('product_store');
 Route::get('products/edit/{product}', [ProductController::class, 'edit'])->name('product_edit');
 Route::post('products/update/{id}', [ProductController::class, 'update'])->name('product_update');
+
+Route::get('login', [AuthenticateController::class, 'singIn'])->name('login');
+Route::post('authenticate', [AuthenticateController::class, 'authetnicateCheck'])->name('authenticate');
+
+Route::get('register', [AuthenticateController::class, 'register'])->name('register');
+Route::post('register', [AuthenticateController::class, 'storeUser'])->name('register_store_user');
+
+Route::get('logout', [AuthenticateController::class, 'logout'])->name('logout');
+
