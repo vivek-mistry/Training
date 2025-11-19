@@ -51,6 +51,7 @@ class AuthenticateController extends Controller
 
     public function logout()
     {
-
+        Auth::guard('web')->logout();
+        return redirect()->route('login')->with('success', 'You have been logged out successfully.');
     }
 }
