@@ -12,6 +12,9 @@ class AuthenticateController extends Controller
 {
     public function singIn()
     {
+        if(Auth::check()) {
+            return redirect()->route('category_list');
+        }
         return view('backend.sign_in');
     }
 
@@ -31,6 +34,9 @@ class AuthenticateController extends Controller
 
     public function register()
     {
+        if(Auth::check()) {
+            return redirect()->route('category_list');
+        }
         return view('backend.register');
     }
 
