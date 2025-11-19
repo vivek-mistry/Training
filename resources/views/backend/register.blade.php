@@ -47,21 +47,30 @@
                                 @csrf
                                 <div class="col-12">
                                     <label for="inputUsername" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="inputUsername" name="name" placeholder="Jhon" required>
+                                    <input type="text" class="form-control" id="inputUsername" name="name" placeholder="Jhon" value="{{ old('name')}}">
+                                    @error("name")
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="col-12">
                                     <label for="inputEmailAddress" class="form-label">Email Address</label>
-                                    <input type="email" class="form-control" name="email" id="inputEmailAddress"
+                                    <input type="email" class="form-control" name="email" id="inputEmailAddress" value="{{ old('email')}}"
                                         placeholder="example@user.com">
+                                    @error("email")
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="col-12">
                                     <label for="inputChoosePassword" class="form-label">Password</label>
                                     <div class="input-group" id="show_hide_password">
                                         <input type="password" name="password" class="form-control border-end-0"
-                                            id="inputChoosePassword" value="12345678" placeholder="Enter Password">
+                                            id="inputChoosePassword" placeholder="Enter Password">
                                         <a href="javascript:;" class="input-group-text bg-transparent"><i
                                                 class="bi bi-eye-slash-fill"></i></a>
                                     </div>
+                                    @error("password")
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 
                                 

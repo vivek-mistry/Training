@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -40,9 +41,10 @@ class AuthenticateController extends Controller
         return view('backend.register');
     }
 
-    public function storeUser(Request $request)
+    public function storeUser(RegisterRequest $request)
     {
         // dd($request->all());
+        $validated = $request->validated();
 
         $user = app(User::class);
         User::create([
