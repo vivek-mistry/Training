@@ -16,7 +16,7 @@ class BackendMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!Auth::check()) {
+        if (!Auth::guard('web_customers')->check()) {
             return redirect()->route('login')->with('error', 'Please login to access the dashboard.');
         }
         return $next($request);
